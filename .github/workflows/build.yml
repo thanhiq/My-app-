@@ -1,26 +1,2 @@
-name: Build iOS ChatGPT WebView
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build:
-    runs-on: macos-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Xcode (check version)
-        run: xcodebuild -version
-
-      - name: Compile Swift
-        run: |
-          mkdir -p build
-          swiftc -target arm64-apple-ios15.0 -sdk $(xcrun --sdk iphoneos --show-sdk-path) \
-          -o build/ChatGPTApp Sources/ChatGPTApp.swift
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ChatGPT-iOS15-Binary
-          path: build/ChatGPTApp
+swiftc -target arm64-apple-ios15.0 -sdk $(xcrun --sdk iphoneos --show-sdk-path) \
+  -o build/ChatGPTApp Sources/main.swift
