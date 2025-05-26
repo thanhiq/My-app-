@@ -8,4 +8,3 @@ struct ChatGPTWebViewApp: App {
         }
     }
 }
-📄 ContentView.s
