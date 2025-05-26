@@ -4,8 +4,7 @@ import SwiftUI
 struct ChatGPTWebViewApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WebView() // <- dùng struct WebView từ WebView.swift
         }
     }
 }
-
