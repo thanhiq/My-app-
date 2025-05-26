@@ -1,21 +1,19 @@
 // !$*UTF8*$!
 {
   archiveVersion = 1;
-  classes = {
-  };
+  classes = {};
   objectVersion = 55;
   objects = {
 
     /* Project object */
-    1D6058900D05DD3D006BFB54 /* Project object */ = {
+    1D6058900D05DD3D006BFB54 = {
       isa = PBXProject;
       attributes = {
-        LastSwiftUpdateCheck = 1330;
         LastUpgradeCheck = 1330;
-        ORGANIZATIONNAME = "YourName";
+        ORGANIZATIONNAME = "OpenAI";
         TargetAttributes = {
           1D6058910D05DD3E006BFB54 = {
-            CreatedOnToolsVersion = 13.3;
+            CreatedOnToolsVersion = 13.0;
           };
         };
       };
@@ -23,97 +21,109 @@
       compatibilityVersion = "Xcode 12.0";
       developmentRegion = en;
       hasScannedForEncodings = 0;
-      knownRegions = (
-        en,
-      );
+      knownRegions = (en);
       mainGroup = 1D6058880D05DD3D006BFB54;
       productRefGroup = 1D60588A0D05DD3D006BFB54;
       projectDirPath = "";
       projectRoot = "";
-      targets = (
-        1D6058910D05DD3E006BFB54,
-      );
+      targets = (1D6058910D05DD3E006BFB54);
     };
 
-    /* Main Group */
+    /* Main group */
     1D6058880D05DD3D006BFB54 = {
       isa = PBXGroup;
       children = (
-        1D6058890D05DD3D006BFB54 /* ChatGPTWebViewApp.swift */,
-        1D6058AA0D05DD3E006BFB54 /* ContentView.swift */,
-        1D6058BB0D05DD3E006BFB54 /* WebView.swift */,
-        1D6058CC0D05DD3E006BFB54 /* Info.plist */,
-        1D6058DD0D05DD3E006BFB54 /* Assets.xcassets */,
+        1D6058890D05DD3D006BFB54,
+        1D6058AA0D05DD3E006BFB54,
+        1D6058BB0D05DD3E006BFB54,
+        1D6058CC0D05DD3E006BFB54,
+        1D6058DD0D05DD3E006BFB54
       );
       sourceTree = "<group>";
     };
 
     /* File references */
-    1D6058890D05DD3D006BFB54 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTWebViewApp.swift; sourceTree = "<group>"; };
-    1D6058AA0D05DD3E006BFB54 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-    1D6058BB0D05DD3E006BFB54 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-    1D6058CC0D05DD3E006BFB54 = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-    1D6058DD0D05DD3E006BFB54 = { isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+    1D6058890D05DD3D006BFB54 = { isa = PBXFileReference; path = ChatGPTWebViewApp.swift; sourceTree = "<group>"; lastKnownFileType = sourcecode.swift; };
+    1D6058AA0D05DD3E006BFB54 = { isa = PBXFileReference; path = ContentView.swift; sourceTree = "<group>"; lastKnownFileType = sourcecode.swift; };
+    1D6058BB0D05DD3E006BFB54 = { isa = PBXFileReference; path = WebView.swift; sourceTree = "<group>"; lastKnownFileType = sourcecode.swift; };
+    1D6058CC0D05DD3E006BFB54 = { isa = PBXFileReference; path = Info.plist; sourceTree = "<group>"; lastKnownFileType = text.plist.xml; };
+    1D6058DD0D05DD3E006BFB54 = { isa = PBXFileReference; path = Assets.xcassets; sourceTree = "<group>"; lastKnownFileType = folder.assetcatalog; };
 
-    /* Build Configuration List */
-    1D6058990D05DD3E006BFB54 = {
-      isa = XCConfigurationList;
-      buildConfigurations = (
-        1D60589A0D05DD3E006BFB54,
-        1D60589B0D05DD3E006BFB54,
+    /* Build files */
+    1D6058F10D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058890D05DD3D006BFB54; };
+    1D6058F20D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058AA0D05DD3E006BFB54; };
+    1D6058F30D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058BB0D05DD3E006BFB54; };
+
+    /* Compile Sources */
+    1D6058F00D05DD3E006BFB54 = {
+      isa = PBXSourcesBuildPhase;
+      buildActionMask = 2147483647;
+      files = (
+        1D6058F10D05DD3E006BFB54,
+        1D6058F20D05DD3E006BFB54,
+        1D6058F30D05DD3E006BFB54
       );
-      defaultConfigurationIsVisible = 0;
-      defaultConfigurationName = Release;
-    };
-
-    /* Debug configuration */
-    1D60589A0D05DD3E006BFB54 = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        PRODUCT_NAME = ChatGPTWebView;
-        SDKROOT = iphoneos;
-        IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-        SWIFT_VERSION = 5.0;
-        TARGETED_DEVICE_FAMILY = "1";
-        CODE_SIGN_IDENTITY = "";
-        CODE_SIGNING_REQUIRED = NO;
-        CODE_SIGNING_ALLOWED = NO;
-        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-        INFOPLIST_FILE = Info.plist;
-      };
-      name = Debug;
-    };
-
-    /* Release configuration */
-    1D60589B0D05DD3E006BFB54 = {
-      isa = XCBuildConfiguration;
-      buildSettings = {
-        PRODUCT_NAME = ChatGPTWebView;
-        SDKROOT = iphoneos;
-        IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-        SWIFT_VERSION = 5.0;
-        TARGETED_DEVICE_FAMILY = "1";
-        CODE_SIGN_IDENTITY = "";
-        CODE_SIGNING_REQUIRED = NO;
-        CODE_SIGNING_ALLOWED = NO;
-        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-        INFOPLIST_FILE = Info.plist;
-      };
-      name = Release;
+      runOnlyForDeploymentPostprocessing = 0;
     };
 
     /* Target */
     1D6058910D05DD3E006BFB54 = {
       isa = PBXNativeTarget;
-      buildConfigurationList = 1D6058990D05DD3E006BFB54;
-      buildPhases = ();
-      buildRules = ();
-      dependencies = ();
       name = ChatGPTWebView;
       productName = ChatGPTWebView;
       productType = "com.apple.product-type.application";
+      buildConfigurationList = 1D6058990D05DD3E006BFB54;
+      buildPhases = (
+        1D6058F00D05DD3E006BFB54
+      );
+      buildRules = ();
+      dependencies = ();
+    };
+
+    /* Configurations */
+    1D60589A0D05DD3E006BFB54 = {
+      isa = XCBuildConfiguration;
+      name = Debug;
+      buildSettings = {
+        PRODUCT_NAME = ChatGPTWebView;
+        SDKROOT = iphoneos;
+        IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+        SWIFT_VERSION = 5.0;
+        TARGETED_DEVICE_FAMILY = "1";
+        CODE_SIGN_IDENTITY = "";
+        CODE_SIGNING_REQUIRED = NO;
+        CODE_SIGNING_ALLOWED = NO;
+        INFOPLIST_FILE = Info.plist;
+        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+      };
+    };
+
+    1D60589B0D05DD3E006BFB54 = {
+      isa = XCBuildConfiguration;
+      name = Release;
+      buildSettings = {
+        PRODUCT_NAME = ChatGPTWebView;
+        SDKROOT = iphoneos;
+        IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+        SWIFT_VERSION = 5.0;
+        TARGETED_DEVICE_FAMILY = "1";
+        CODE_SIGN_IDENTITY = "";
+        CODE_SIGNING_REQUIRED = NO;
+        CODE_SIGNING_ALLOWED = NO;
+        INFOPLIST_FILE = Info.plist;
+        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+      };
+    };
+
+    1D6058990D05DD3E006BFB54 = {
+      isa = XCConfigurationList;
+      buildConfigurations = (
+        1D60589A0D05DD3E006BFB54,
+        1D60589B0D05DD3E006BFB54
+      );
+      defaultConfigurationIsVisible = 0;
+      defaultConfigurationName = Release;
     };
   };
-
-  rootObject = 1D6058900D05DD3D006BFB54 /* Project object */;
+  rootObject = 1D6058900D05DD3D006BFB54;
 }
