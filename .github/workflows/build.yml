@@ -20,7 +20,7 @@ jobs:
           swiftc -target arm64-apple-ios15.0 -sdk $(xcrun --sdk iphoneos --show-sdk-path) \
           -o build/ChatGPTApp Sources/ChatGPTApp.swift
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ChatGPT-iOS15-Binary
           path: build/ChatGPTApp
