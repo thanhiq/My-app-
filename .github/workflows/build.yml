@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Xcode
-        run: sudo xcode-select -s /Applications/Xcode_14.2.app
+      name: Set up Xcode (skip if default)
+  run: xcodebuild -version
 
       - name: Compile Swift file
         run: |
