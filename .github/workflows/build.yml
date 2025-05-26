@@ -1,4 +1,5 @@
-name: Build ChatGPT WebView IPA
+
+name: Build ChatGPTWebView IPA
 
 on:
   push:
@@ -9,26 +10,35 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build .ipa
+      - name: Set up Xcode
+        run: xcodebuild -version
+
+      - name: Build .app
         run: |
-          xcodebuild -project ChatGPTWebView.xcodeproj \
+          xcodebuild \
+            -project ChatGPTWebView.xcodeproj \
             -scheme ChatGPTWebView \
             -configuration Release \
             -sdk iphoneos \
-            -destination 'generic/platform=iOS' \
-            clean build \
-            CODE_SIGNING_ALLOWED=NO
+            -destination generic/platform=iOS \
+            CODE_SIGNING_ALLOWED=NO \
+            build
 
-      - name: Export .ipa
+      - name: Debug built .app path
+        run: ls -R ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/
+
+      - name: Package .ipa
         run: |
           mkdir -p Payload
-           cp -r ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/ChatGPTWebView.app Payload/
+          cp -r ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/ChatGPTWebView.app Payload/
           zip -r ChatGPTWebView.ipa Payload
+          rm -rf Payload
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload .ipa
+        uses: actions/upload-artifact@v4
         with:
-          name: ChatGPTWebView-ipa
+          name: ChatGPTWebView-IPA
           path: ChatGPTWebView.ipa
