@@ -6,8 +6,9 @@ struct WebView: UIViewRepresentable {
         let config = WKWebViewConfiguration()
         config.preferences.javaScriptEnabled = true
         let webView = WKWebView(frame: .zero, configuration: config)
-        let url = URL(string: "https://chat.openai.com/")!
-        webView.load(URLRequest(url: url))
+        if let url = URL(string: "https://chat.openai.com") {
+            webView.load(URLRequest(url: url))
+        }
         return webView
     }
 
