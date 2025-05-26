@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+
 {
   archiveVersion = 1;
   classes = {};
@@ -53,8 +53,9 @@
     1D6058F10D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058890D05DD3D006BFB54; };
     1D6058F20D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058AA0D05DD3E006BFB54; };
     1D6058F30D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058BB0D05DD3E006BFB54; };
+    1D6058F40D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058DD0D05DD3E006BFB54; };
 
-    /* Compile Sources */
+    /* Sources */
     1D6058F00D05DD3E006BFB54 = {
       isa = PBXSourcesBuildPhase;
       buildActionMask = 2147483647;
@@ -66,6 +67,24 @@
       runOnlyForDeploymentPostprocessing = 0;
     };
 
+    /* Resources */
+    1D6058E10D05DD3E006BFB54 = {
+      isa = PBXResourcesBuildPhase;
+      buildActionMask = 2147483647;
+      files = (
+        1D6058F40D05DD3E006BFB54
+      );
+      runOnlyForDeploymentPostprocessing = 0;
+    };
+
+    /* Frameworks */
+    1D6058E20D05DD3E006BFB54 = {
+      isa = PBXFrameworksBuildPhase;
+      buildActionMask = 2147483647;
+      files = ();
+      runOnlyForDeploymentPostprocessing = 0;
+    };
+
     /* Target */
     1D6058910D05DD3E006BFB54 = {
       isa = PBXNativeTarget;
@@ -74,7 +93,9 @@
       productType = "com.apple.product-type.application";
       buildConfigurationList = 1D6058990D05DD3E006BFB54;
       buildPhases = (
-        1D6058F00D05DD3E006BFB54
+        1D6058F00D05DD3E006BFB54, // Sources
+        1D6058E20D05DD3E006BFB54, // Frameworks
+        1D6058E10D05DD3E006BFB54  // Resources
       );
       buildRules = ();
       dependencies = ();
