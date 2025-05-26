@@ -25,10 +25,10 @@ jobs:
       - name: Export .ipa
         run: |
           mkdir -p Payload
-          cp -r build/Release-iphoneos/ChatGPTWebView.app Payload/
+           cp -r ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/ChatGPTWebView.app Payload/
           zip -r ChatGPTWebView.ipa Payload
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ChatGPT-IPA
+          name: ChatGPTWebView-ipa
           path: ChatGPTWebView.ipa
