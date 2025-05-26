@@ -1,5 +1,4 @@
-
-name: Build ChatGPTWebView IPA
+name: Build and Debug ChatGPTWebView IPA
 
 on:
   push:
@@ -16,7 +15,7 @@ jobs:
       - name: Set up Xcode
         run: xcodebuild -version
 
-      - name: Build .app
+      - name: Build .app with Xcode
         run: |
           xcodebuild \
             -project ChatGPTWebView.xcodeproj \
@@ -27,17 +26,27 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
 
-      - name: Debug built .app path
-        run: ls -R ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/
+      - name: Find built .app path
+        id: find_app
+        run: |
+          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -type d -name "ChatGPTWebView.app" | head -n 1)
+          echo "Found .app at: $APP_PATH"
+          echo "APP_PATH=$APP_PATH" >> "$GITHUB_ENV"
+
+      - name: List contents of .app
+        run: |
+          ls -lh "$APP_PATH"
+          ls -lh "$APP_PATH/Contents" || true
+          ls -lh "$APP_PATH/Frameworks" || true
 
       - name: Package .ipa
         run: |
           mkdir -p Payload
-          cp -r ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/ChatGPTWebView.app Payload/
+          cp -r "$APP_PATH" Payload/
           zip -r ChatGPTWebView.ipa Payload
           rm -rf Payload
 
-      - name: Upload .ipa
+      - name: Upload .ipa as artifact
         uses: actions/upload-artifact@v4
         with:
           name: ChatGPTWebView-IPA
