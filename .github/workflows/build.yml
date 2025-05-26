@@ -1,4 +1,4 @@
-name: Build iOS ChatGPT WebView App
+name: Build iOS ChatGPT WebView
 
 on:
   push:
@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      name: Set up Xcode (skip if default)
-  run: xcodebuild -version
+      - name: Set up Xcode (check version)
+        run: xcodebuild -version
 
-      - name: Compile Swift file
+      - name: Compile Swift
         run: |
           mkdir -p build
           swiftc -target arm64-apple-ios15.0 -sdk $(xcrun --sdk iphoneos --show-sdk-path) \
