@@ -17,7 +17,7 @@ jobs:
       - name: Compile Swift
         run: |
           mkdir -p build
-          swiftc -target arm64-apple-ios15.0 -sdk $(xcrun --sdk iphoneos --show-sdk-path) \
+          swiftc -target arm64-apple-ios15.0 -sdk $(xcrun --sdk iphoneos --s'
           -o build/ChatGPTApp Sources/ChatGPTApp.swift
 
       - uses: actions/upload-artifact@v4
