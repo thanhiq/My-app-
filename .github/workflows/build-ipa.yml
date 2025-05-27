@@ -26,6 +26,12 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             BUILD_DIR=build
 
+      - name: Debug list build output
+        run: |
+          echo "Build folder content:"
+          find build
+
+
       - name: Find built .app path
         id: find_app
         run: |
