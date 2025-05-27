@@ -33,11 +33,11 @@
     1D6058880D05DD3D006BFB54 = {
       isa = PBXGroup;
       children = (
-        1D6058890D05DD3D006BFB54,
-        1D6058AA0D05DD3E006BFB54,
-        1D6058BB0D05DD3E006BFB54,
-        1D6058CC0D05DD3E006BFB54,
-        1D6058DD0D05DD3E006BFB54
+        1D6058890D05DD3D006BFB54, /* ChatGPTWebViewApp.swift */
+        1D6058AA0D05DD3E006BFB54, /* ContentView.swift */
+        1D6058BB0D05DD3E006BFB54, /* WebView.swift */
+        1D6058CC0D05DD3E006BFB54, /* Info.plist */
+        1D6058DD0D05DD3E006BFB54  /* Assets.xcassets */
       );
       sourceTree = "<group>";
     };
@@ -53,7 +53,6 @@
     1D6058F10D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058890D05DD3D006BFB54; };
     1D6058F20D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058AA0D05DD3E006BFB54; };
     1D6058F30D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058BB0D05DD3E006BFB54; };
-    1D6058F40D05DD3E006BFB54 = { isa = PBXBuildFile; fileRef = 1D6058DD0D05DD3E006BFB54; };
 
     /* Compile Sources */
     1D6058F00D05DD3E006BFB54 = {
@@ -67,35 +66,15 @@
       runOnlyForDeploymentPostprocessing = 0;
     };
 
-    /* Resources */
-    1D6058E10D05DD3E006BFB54 = {
-      isa = PBXResourcesBuildPhase;
-      buildActionMask = 2147483647;
-      files = (
-        1D6058F40D05DD3E006BFB54
-      );
-      runOnlyForDeploymentPostprocessing = 0;
-    };
-
-    /* Frameworks */
-    1D6058E20D05DD3E006BFB54 = {
-      isa = PBXFrameworksBuildPhase;
-      buildActionMask = 2147483647;
-      files = ();
-      runOnlyForDeploymentPostprocessing = 0;
-    };
-
     /* Target */
     1D6058910D05DD3E006BFB54 = {
       isa = PBXNativeTarget;
-      name = ChatGPTWebView;
-      productName = ChatGPTWebView;
+      name = ChatGPT;
+      productName = ChatGPT;
       productType = "com.apple.product-type.application";
       buildConfigurationList = 1D6058990D05DD3E006BFB54;
       buildPhases = (
-        1D6058F00D05DD3E006BFB54,
-        1D6058E20D05DD3E006BFB54,
-        1D6058E10D05DD3E006BFB54
+        1D6058F00D05DD3E006BFB54
       );
       buildRules = ();
       dependencies = ();
@@ -106,7 +85,7 @@
       isa = XCBuildConfiguration;
       name = Debug;
       buildSettings = {
-        PRODUCT_NAME = ChatGPTWebView;
+        PRODUCT_NAME = ChatGPT;
         SDKROOT = iphoneos;
         IPHONEOS_DEPLOYMENT_TARGET = 15.0;
         SWIFT_VERSION = 5.0;
@@ -123,7 +102,7 @@
       isa = XCBuildConfiguration;
       name = Release;
       buildSettings = {
-        PRODUCT_NAME = ChatGPTWebView;
+        PRODUCT_NAME = ChatGPT;
         SDKROOT = iphoneos;
         IPHONEOS_DEPLOYMENT_TARGET = 15.0;
         SWIFT_VERSION = 5.0;
