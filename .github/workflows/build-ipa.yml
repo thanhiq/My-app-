@@ -24,20 +24,18 @@ jobs:
             -sdk iphoneos \
             -destination generic/platform=iOS \
             CODE_SIGNING_ALLOWED=NO \
-            build
+            BUILD_DIR=build
 
       - name: Find built .app path
         id: find_app
         run: |
-          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -type d -name "ChatGPTWebView.app" | head -n 1)
+          APP_PATH=$(find build -type d -name "ChatGPTWebView.app" | head -n 1)
           echo "Found .app at: $APP_PATH"
           echo "APP_PATH=$APP_PATH" >> "$GITHUB_ENV"
 
       - name: List contents of .app
         run: |
           ls -lh "$APP_PATH"
-          ls -lh "$APP_PATH/Contents" || true
-          ls -lh "$APP_PATH/Frameworks" || true
 
       - name: Package .ipa
         run: |
